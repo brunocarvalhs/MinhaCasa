@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/nav_home">
+
+    <navigation
+        android:id="@+id/nav_costs"
+        app:startDestination="@id/costsFragment">
+
+        <argument
+            android:name="home"
+            app:argType="br.com.brunocarvalhs.minhacasa.domain.entities.Home" />
+
+        <argument
+            android:name="title"
+            android:defaultValue="fragment_costs_list"
+            app:argType="string" />
+
+        <fragment
+            android:id="@+id/costsFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.listCosts.CostsFragment"
+            android:label="{title}"
+            tools:layout="@layout/fragment_costs_list">
+            <action
+                android:id="@+id/action_costsFragment_to_infoFragment"
+                app:destination="@id/infoFragment" />
+            <action
+                android:id="@+id/action_costsFragment_to_registerCostsFragment"
+                app:destination="@id/registerCostsFragment" />
+            <argument
+                android:name="home"
+                app:argType="br.com.brunocarvalhs.minhacasa.domain.entities.Home" />
+
+        </fragment>
+        <fragment
+            android:id="@+id/infoFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.info.InfoFragment"
+            android:label="{name}"
+            tools:layout="@layout/fragment_info">
+            <action
+                android:id="@+id/action_infoFragment_to_costsFragment"
+                app:destination="@id/costsFragment"
+                app:popUpTo="@id/nav_costs" />
+            <argument
+                android:name="home"
+                app:argType="br.com.brunocarvalhs.minhacasa.domain.entities.Home" />
+            <argument
+                android:name="cost"
+                app:argType="br.com.brunocarvalhs.minhacasa.domain.entities.Cost" />
+            <argument
+                android:name="name"
+                android:defaultValue="fragment_info"
+                app:argType="string" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerCostsFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.registerCosts.RegisterCostsFragment"
+            android:label="Registrar Conta"
+            tools:layout="@layout/fragment_register_costs">
+            <argument
+                android:name="home"
+                app:argType="br.com.brunocarvalhs.minhacasa.domain.entities.Home" />
+            <action
+                android:id="@+id/action_registerCostsFragment_to_costsFragment"
+                app:destination="@id/costsFragment"
+                app:popUpTo="@id/nav_costs" />
+        </fragment>
+        <action
+            android:id="@+id/action_global_nav_home"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_costs"
+            app:popUpToInclusive="true" />
+    </navigation>
+    <navigation
+        android:id="@+id/nav_home"
+        app:startDestination="@id/homeFragment">
+
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.myHome.HomeFragment"
+            android:label="Minhas Casas"
+            tools:layout="@layout/fragment_home">
+            <action
+                android:id="@+id/action_homeFragment_to_registerHomeFragment"
+                app:destination="@id/registerHomeFragment" />
+            <action
+                android:id="@+id/action_homeFragment_to_includeHomeFragment"
+                app:destination="@id/includeHomeFragment" />
+
+            <action
+                android:id="@+id/action_homeFragment_to_nav_costs"
+                app:destination="@+id/nav_costs"
+                app:popUpTo="@id/homeFragment"
+                app:popUpToInclusive="true" />
+
+        </fragment>
+        <fragment
+            android:id="@+id/registerHomeFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.registerHome.RegisterHomeFragment"
+            android:label="Contruir Casa"
+            tools:layout="@layout/fragment_register_home">
+            <action
+                android:id="@+id/action_registerHomeFragment_to_nav_costs"
+                app:destination="@id/nav_costs"
+                app:popUpTo="@id/nav_costs" />
+        </fragment>
+        <fragment
+            android:id="@+id/includeHomeFragment"
+            android:name="br.com.brunocarvalhs.minhacasa.features.includeHome.IncludeHomeFragment"
+            android:label="Acessar Casa"
+            tools:layout="@layout/fragment_include_home">
+            <action
+                android:id="@+id/action_includeHomeFragment_to_nav_costs"
+                app:destination="@id/nav_costs"
+                app:popUpTo="@id/nav_costs" />
+        </fragment>
+    </navigation>
+
+</navigation>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "458474858995",
+    "project_id": "minhacasa-4c520",
+    "storage_bucket": "minhacasa-4c520.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458474858995:android:0e82c8054a5dcda2924a86",
+        "android_client_info": {
+          "package_name": "br.com.brunocarvalhs.minhacasa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "458474858995-5koss5vo34vj2eevnoi8ksfsktqil8b7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmdkvqCmkFb9NvAbnI4wemfD0JpTFQCnU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "458474858995-5koss5vo34vj2eevnoi8ksfsktqil8b7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
