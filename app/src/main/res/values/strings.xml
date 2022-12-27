@@ -18,4 +18,5 @@
     <string name="type_fix">Fix</string>
     <string name="type_var">Variable</string>
     <string name="pref_key">9742e3b6-2b3a-43ba-b87f-bdbfd9ced038</string>
+    <string name="list_cots_header_value_all">R$ %s</string>
 </resources>

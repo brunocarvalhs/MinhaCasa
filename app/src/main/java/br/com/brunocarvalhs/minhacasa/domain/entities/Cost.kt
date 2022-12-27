@@ -11,7 +11,11 @@ import java.util.*
 data class Cost(
     @SerializedName(ID) val id: String = UUID.randomUUID().toString(),
     @SerializedName(NAME) val name: String = EMPTY_STRING,
-    @SerializedName(TYPE) val type: Type? = Type.Fix
+    @SerializedName(TYPE) val type: Type? = Type.Fix,
+    @SerializedName(VALUE) val value: Double = ZERO_DOUBLE,
+    @SerializedName(PAYMENT_VOUCHER) val paymentVoucher: String? = null,
+    @SerializedName(TICKET) val ticket: String? = null,
+    @SerializedName(IS_PAY) val isPay: Boolean = false,
 ) : Parcelable {
 
     fun toMap(): Map<String?, Any?> {
@@ -29,7 +33,12 @@ data class Cost(
         const val ID = "id"
         const val NAME = "name"
         const val TYPE = "type"
+        const val VALUE = "value"
+        const val PAYMENT_VOUCHER = "payment_voucher"
+        const val TICKET = "ticket"
+        const val IS_PAY = "is_pay"
 
         const val EMPTY_STRING = ""
+        const val ZERO_DOUBLE = (0).toDouble()
     }
 }

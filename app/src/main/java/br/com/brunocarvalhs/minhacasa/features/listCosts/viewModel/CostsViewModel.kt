@@ -43,6 +43,12 @@ class CostsViewModel @Inject constructor(
         sharedPreferences.edit().putString(BuildConfig.APPLICATION_ID, null).apply()
     }
 
+    fun calculationValueAll(): Double {
+        val valueAllFix = listFix.sumOf { it.value }
+        val valueAllVar = listVar.sumOf { it.value }
+        return (valueAllFix + valueAllVar)
+    }
+
     private fun filterListFix(list: List<Cost>) {
         listFix.clear()
         listFix.addAll(list.filter { it.type == Type.Fix })

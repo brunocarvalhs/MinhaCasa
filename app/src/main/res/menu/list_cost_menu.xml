@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@id/action_global_nav_home"
-        android:icon="@drawable/ic_baseline_add_24"
-        android:title="Trocar de casa" />
+    <group>
+        <item
+            android:id="@id/action_global_nav_home"
+            android:icon="@drawable/ic_baseline_add_24"
+            android:title="Atualizar dados" />
+        <item
+            android:id="@id/action_global_nav_home"
+            android:icon="@drawable/ic_baseline_add_24"
+            android:title="Trocar de casa" />
+    </group>
+    <group>
+        <item
+            android:id="@id/action_global_nav_home"
+            android:icon="@drawable/ic_baseline_add_24"
+            android:title="Sair" />
+    </group>
 </menu>

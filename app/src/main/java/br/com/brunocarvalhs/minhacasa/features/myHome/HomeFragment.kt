@@ -44,7 +44,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         if (list.isNullOrEmpty()) {
             binding.list.visibility = View.GONE
         } else {
-            binding.list.adapter = MyHomesRecyclerViewAdapter(list) { clickItem(it) }
+            binding.list.adapter =
+                MyHomesRecyclerViewAdapter(requireContext(), list) { clickItem(it) }
         }
     }
 
